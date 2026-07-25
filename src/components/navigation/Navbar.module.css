@@ -1,0 +1,82 @@
+/* Navbar.module.css */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-light);
+  transition: all var(--transition-normal);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px; /* Generous height for luxury feel */
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.navLinks {
+  display: none; /* We will reveal on desktop */
+  align-items: center;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .navLinks { display: flex; }
+}
+
+.link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
+  position: relative;
+  padding: var(--space-2) 0;
+}
+
+/* Minimalist hover underline animation */
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--text-main);
+  transition: width var(--transition-normal);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.actionBtn {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  transition: opacity var(--transition-fast);
+}
+
+.actionBtn:hover {
+  opacity: 0.6;
+}

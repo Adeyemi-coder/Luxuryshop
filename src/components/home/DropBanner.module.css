@@ -1,0 +1,116 @@
+/* DropBanner.module.css */
+.dropSection {
+  background: linear-gradient(135deg, #0A0A0A 0%, #1E293B 100%);
+  color: #FFFFFF;
+  padding: var(--space-16) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--accent-gold);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+.liveDot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 rgba(197, 160, 89, 0.4);
+  animation: pulseGlow 2s infinite;
+}
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(197, 160, 89, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+  }
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .title { font-size: var(--text-3xl); }
+}
+
+.timerGrid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.timerBox {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
+  min-width: 90px;
+}
+
+.timerNumber {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+}
+
+.timerLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-light);
+}
+
+.actionBtn {
+  background-color: var(--accent-gold);
+  color: #0A0A0A;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: var(--text-xs);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+}
+
+.actionBtn:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+}

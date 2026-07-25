@@ -1,0 +1,166 @@
+/* Hero.module.css */
+.hero {
+  position: relative;
+  /* Increased height to make the section look spacious and grand */
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+/* 1. Background Image Slider Container */
+.sliderContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slideImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+}
+
+.activeSlide {
+  opacity: 1; /* Fully clear, zero opacity/fading on the image itself */
+  transform: scale(1.04);
+}
+
+/* 2. Light text contrast scrim (Keeps text readable while letting the image shine) */
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Removed heavy backdrop-filter blur and strong white fade so the picture is crystal clear */
+  background: linear-gradient(
+    90deg, 
+    rgba(10, 10, 10, 0.45) 0%, 
+    rgba(10, 10, 10, 0.20) 50%, 
+    rgba(10, 10, 10, 0.05) 100%
+  );
+  z-index: 2;
+}
+
+/* 3. Content Layer (Now styled with high-contrast white text for crystal-clear image viewing) */
+.content {
+  position: relative;
+  max-width: 750px;
+  z-index: 3;
+  padding: var(--space-16) 0;
+}
+
+.season {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #D4AF37; /* Bright gold for striking contrast against clear image */
+  margin-bottom: var(--space-4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  color: #FFFFFF; /* Pure white for maximum clarity */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.description {
+  font-size: var(--text-lg);
+  color: #E2E8F0; /* Clean light gray for readability */
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.ctaGroup {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.primaryBtn {
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: var(--text-xs);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.primaryBtn:hover {
+  background-color: var(--accent-gold);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: var(--text-xs);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.secondaryBtn:hover {
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  border-color: #FFFFFF;
+}
+
+/* 4. Manual Slide Indicators (Moved to the MIDDLE bottom of the section!) */
+.indicators {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%); /* Centers the dots precisely in the middle */
+  display: flex;
+  gap: var(--space-3);
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.activeDot {
+  background-color: #FFFFFF;
+  transform: scale(1.25);
+  border-color: var(--accent-gold);
+}

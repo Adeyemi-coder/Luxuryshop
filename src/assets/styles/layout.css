@@ -1,0 +1,51 @@
+/* ==========================================================================
+   GLOBAL LAYOUT & GRID ARCHITECTURE
+   ========================================================================== */
+
+/* 1. Master Container — Keeps content centered with breathable side padding */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-12);
+  }
+}
+
+/* 2. Section Spacing — Ensures consistent vertical rhythm */
+.section-padding {
+  padding: var(--space-16) 0;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: var(--space-24) 0;
+  }
+}
+
+/* 3. Reusable Grid Systems */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+/* On tablets and larger, expand columns automatically */
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}

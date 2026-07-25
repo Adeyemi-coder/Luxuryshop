@@ -1,0 +1,88 @@
+/* CategoryGrid.module.css */
+.section {
+  padding: var(--space-24) 0;
+  background-color: var(--bg-primary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-12);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  color: var(--text-main);
+}
+
+.card {
+  position: relative;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-6);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+/* 1. Real Photography Background */
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  z-index: 1;
+}
+
+/* 2. Dark Luxury Gradient Overlay for Text Readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(10, 10, 10, 0.85) 100%);
+  z-index: 2;
+  transition: background var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-floating);
+  border-color: var(--accent-gold);
+}
+
+.card:hover .bgImage {
+  transform: scale(1.08); /* 8% zoom on hover */
+}
+
+.card:hover .overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 20%, rgba(10, 10, 10, 0.95) 100%);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: #FFFFFF; /* High contrast pure white over image */
+  z-index: 3;
+  margin-bottom: var(--space-1);
+}
+
+.cardSubtitle {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold); /* Gold badge text */
+  z-index: 3;
+}

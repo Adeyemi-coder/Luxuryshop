@@ -1,0 +1,58 @@
+/* Footer.module.css */
+.footer {
+  background-color: var(--text-main); /* High contrast dark footer */
+  color: var(--bg-primary);
+  border-top: 1px solid var(--border-dark);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-8);
+}
+
+.colTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  color: var(--bg-primary);
+  margin-bottom: var(--space-6);
+}
+
+.text {
+  color: var(--text-light);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.link {
+  color: var(--text-light);
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--accent-gold); /* Luxury gold highlight on hover */
+}
+
+.bottomBar {
+  margin-top: var(--space-16);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .bottomBar { flex-direction: row; }
+}
+
+.copyright {
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
