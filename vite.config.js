@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Luxuryshop/', // <-- Update this to match your exact repository name
+  base: './', // Use relative base path for GitHub Pages compatibility
 })
